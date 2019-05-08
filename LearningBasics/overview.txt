@@ -1,0 +1,41 @@
+overview
+
+accounts:
+there are two types of accounts in ethereum:
+
+external accounts: are controlled by public-private keys
+>Humans
+Address of external account is determined by the public key
+
+Contract accounts are controlled by the code stored with the account
+address of a contract is determined at the time the contract is created
+
+-------------------------------------------------------------
+Transactions:
+
+A transaction is a message that is sent from one account to another
+-it can contain binary data which is called 'payload' and Ether
+
+if the target account contains code, that code is executed and the payload is
+provided as input data
+
+If the target account is not set(trans doesnt have a recipient or set to NULL)
+-The transaction creates a new contract
+
+----------------------------------------------------------------------------
+Gas:
+
+uppon creation the transaction is charged with a certian amount of gas,
+the gas is to limit the amount of work needed to execute the transaction
+
+the gas price is a value set by the creator of the transaction who has to pay gas * gas_price
+up front from sending the account, if gas is left over afterwords, the gas is refunded
+
+-----------------------------------------------------------------------------
+storage memory and the stack:
+
+each account has a data area called storage which is persistent between function calls and trans,
+storage is a key-value store that maps 256 bit words to 256 bit words
+
+the second data area is called memory:
+linear and can be addressed at byte level, reads are limited to width of 256 bits
